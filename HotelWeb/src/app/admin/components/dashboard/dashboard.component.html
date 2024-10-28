@@ -1,0 +1,75 @@
+<!-- <div class="center-form">
+    <button nz-button nzType="primary" class="post-room-btn" routerLink="/room"> Post Room</button>
+
+<div class="card"  *ngFor="let room of rooms">
+      <img src="https://via.placeholder.com/150" alt="Card image" class="card-image">
+    <div class="card-content">
+      <h2 class="card-title"> {{room.name}}</h2>
+      <p class="card-description">
+             {{room.type}}
+      </p>
+      <button class="card-button">Learn More</button>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div *ngFor="let room of rooms">
+    <p>Id: {{room.id}}</p>
+    <h3> Name :{{ room.name }}</h3>
+    <p>Type: {{ room.type }}</p>
+    <p>Price: {{ room.price }}</p>
+    <p>Available {{room.available}}</p>
+  </div>    
+  <button (click)="onPreviousPage()" [disabled]="pageNumber === 1">Previous</button>
+<button (click)="onNextPage()">Next</button>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<ng-template #noRooms>
+    <p>No rooms available.</p>
+  </ng-template>
+   -->
+   <div class="container">
+    <h2 class="title">Room List</h2>
+  
+    <div class="row">
+      <div class="column" *ngFor="let room of rooms; let i = index">
+        <div class="card">
+          <div class="card-body">
+            <div routerLink="/details/{{room.id}}">
+            <img *ngIf="room.photo" 
+            [src]="'data:image/jpeg;base64,' + room.photo" 
+            alt="{{ room.name }}" 
+            style="width: 100px; height: auto; border-radius: 15px; cursor: pointer;" />
+       
+            <p><strong>Type:</strong> {{ room.type }}</p>
+            <p><strong>Price:</strong> {{ room.price | currency }}</p>
+            <p><strong>Available:</strong> {{ room.available ? 'Yes' : 'No' }}</p>
+          </div>
+  
+            <hr>
+  
+            <div class="button-container">
+              <a class="btn btn-edit" routerLink="/room/{{room.id}}/edit">Edit</a>
+              
+              <button class="btn btn-delete" (click)="confirmDelete(room.id, pageNumber)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+ <!-- Pagination Controls -->
+<div class="pagination-controls">
+  <button class="pagination-btn" (click)="previousPage()" [disabled]="pageNumber === 1">Previous</button>
+  <span>Page {{ pageNumber }} of {{ totalPages }}</span>
+  <button class="pagination-btn" (click)="nextPage()" [disabled]="pageNumber === totalPages">Next</button>
+</div>
+
+
+<!-- 
+  (click)="editRoom(room.id)"
+  (click)="deleteRoom(room.id)" -->

@@ -1,0 +1,24 @@
+
+
+<h1>Room Details </h1>
+<div class="box">
+    <div class="row">
+        <!-- Left column with the photo -->
+        <div class="col-md-5">
+            <img *ngIf="data.photo" [src]="'data:image/jpeg;base64,' + data.photo" alt="{{ data.name }}" />
+        </div>
+        
+        <!-- Right column with the data information -->
+        <div class="col-md-7">
+            <div class="info">
+                <ul class="list-unstyled">
+                    <li><strong>Id: </strong> {{data.id}}</li>
+                    <li><strong>Name: </strong> {{data.name}}</li>
+                    <li><strong>Price: </strong> {{data.price}}</li>
+                    <li><strong>Type: </strong> {{data.type}}</li>
+                    <li><strong>Available: </strong> {{data.available}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

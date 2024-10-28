@@ -1,0 +1,53 @@
+<div *ngIf="bookings?.length > 0; else noData">
+    <nz-table [nzData]="bookings" nzBordered>
+      <thead>
+        <tr>
+          <th>Room Name</th>
+          <th>Room Type</th>
+          <th>Check-In Date</th>
+          <th>Check-Out Date</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of bookings let i = index">
+          <td>{{ book.roomName }}</td>
+          <td>{{ book.roomType }}</td>
+          <td>{{ book.checkInDate | date: 'shortDate' }}</td>
+          <td>{{ book.checkOutDate | date: 'shortDate' }}</td>
+          <td>{{ book.price | currency }}</td>
+          <td>
+            <ng-container *ngIf="book.reservationStatus === 'PENDING'">
+              <nz-tag nzColor="processing">
+                <span nz-icon nzType="sync"></span> Pending
+              </nz-tag>
+            </ng-container>
+            <ng-container *ngIf="book.reservationStatus === 'APPROVED'">
+              <nz-tag nzColor="success">
+                <span nz-icon nzType="check-circle"></span> Approved
+              </nz-tag>
+            </ng-container>
+            <ng-container *ngIf="book.reservationStatus === 'REJECTED'">
+              <nz-tag nzColor="error">
+                <span nz-icon nzType="close-circle"></span> Rejected
+              </nz-tag>
+            </ng-container>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <div class="pagination">
+      <nz-pagination 
+        [nzPageIndex]="currentPage" 
+        [nzTotal]="total" 
+        [nzPageSize]="5" 
+        (nzPageIndexChange)="pageIndexChange($event)">
+      </nz-pagination>
+    </div>
+  </div>
+  
+  <ng-template #noData>
+    <p>No bookings available.</p>
+  </ng-template>
+  

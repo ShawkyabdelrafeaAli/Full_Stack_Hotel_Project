@@ -1,0 +1,86 @@
+<!-- <div class="row justify-content-center">
+    <div class="card col-md-6">
+        <div class="card-header text-center">
+            <h3>Update Room</h3>
+        </div>
+        <hr />
+        <div class="card-body">
+            <form (ngSubmit)="updateRoom()" #roomForm="ngForm">
+
+                <div class="form-group mb-3">
+                    <label for="id">Room ID</label>
+                    <input type="text" id="id" class="form-control" [(ngModel)]="room.id" name="id" 
+                           required placeholder="Enter Room ID" [readonly]="true">
+                    <div *ngIf="roomForm.submitted && !room.id" class="text-danger">Room ID is required</div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="name">Room Name</label>
+                    <input type="text" id="name" class="form-control" [(ngModel)]="room.name" name="name" 
+                           required placeholder="Enter Room Name">
+                    <div *ngIf="roomForm.submitted && !room.name" class="text-danger">Room Name is required</div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="type">Room Type</label>
+                    <input type="text" id="type" class="form-control" [(ngModel)]="room.type" name="type" 
+                           required placeholder="Enter Room Type (e.g., Deluxe, Standard)">
+                    <div *ngIf="roomForm.submitted && !room.type" class="text-danger">Room Type is required</div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="price">Room Price</label>
+                    <input type="number" id="price" class="form-control" [(ngModel)]="room.price" name="price" 
+                           required placeholder="Enter Room Price">
+                    <div *ngIf="roomForm.submitted && !room.price" class="text-danger">Room Price is required</div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="available">Room Availability</label>
+                    <select id="available" class="form-control" [(ngModel)]="room.available" name="available" required>
+                        <option value="">Select Availability</option>
+                        <option value="true">Available</option>
+                        <option value="false">Not Available</option>
+                    </select>
+                   
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success btn-block">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+<div>
+    <h2>Add Room</h2>
+  
+    <form  (ngSubmit)="updateRoom()">
+      <label for="name">Room Id:</label>
+      <input type="text" id="id" [(ngModel)]="room.id" name="id" required>
+  
+      <label for="type">Room Name:</label>
+      <input type="text" id="type" [(ngModel)]="room.name" name="name" required>
+  
+      
+      <label for="price">Room Price:</label>
+      <input type="number" id="price" [(ngModel)]="room.price" name="price" required>
+  
+        
+      <label for="type">Room Type :</label>
+      <input type="text" id="price" [(ngModel)]="room.type" name="type" required>
+        
+      <label for="available">Room: Available</label>
+      <input type="text" id="available" [(ngModel)]="room.available" name="available" required>
+
+      <button type="submit">Add Room</button>
+    </form>
+  
+    <!-- Display success or error messages -->
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+  

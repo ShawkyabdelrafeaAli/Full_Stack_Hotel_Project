@@ -1,0 +1,87 @@
+ <!-- <div class="table-container">
+    <table >
+        <thead>
+            <tr>
+                <th>Room Name</th>
+                <th>Room Type</th>
+                <th>Check In Date</th>
+                <th>Check Out Date</th>
+                <th>UserName</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations">
+                <td>{{reservation.roomName}}</td>
+                <td>{{reservation.roomType}}</td>
+                <td>{{reservation.checkInDate}}</td>
+                <td>{{reservation.checkOutDate}}</td>
+                <td>{{reservation.username}}</td>
+            </tr>
+        </tbody>
+    </table>
+   <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="pageNumber === 1">Previous</button>
+    <span>Page {{ pageNumber }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="pageNumber === totalPages">Next</button>
+  </div> 
+
+</div> 
+ -->
+ <div *ngIf="reservationResponse">
+    <h2>Reservations</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Reservation ID</th>
+          <th>Check-in Date </th>
+          <th>Check-Out Date </th>
+          <th>Price</th>
+          <th>Room Id</th>
+          <th>Room Name</th>
+          <th>User Name</th>
+          <th>Room Type</th>
+          <th>Status</th>
+          <th>User Id</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservationResponse.reservationDtoList">
+          <td>{{reservation.id }}</td>
+          <td>{{reservation.checkInDate| date:'mediumDate' }}</td>
+          <td>{{reservation.checkOutDate| date:'mediumDate' }}</td>
+          <td>{{reservation.price}}</td>
+          <td>{{reservation.roomId}}</td>
+          <td>{{reservation.roomName}}</td>
+          <td>{{reservation.username}}</td>
+          <td>{{reservation.roomType}}</td>
+          <td>{{reservation.reservationStatus}}</td>
+          <td>{{reservation.userId}}</td>
+          <td>
+            <span *ngIf="reservation.reservationStatus === 'PENDING'">
+              <i class="fa fa-check-circle icon icon-approve" 
+                 (click)="changeReservationStatus(reservation.id, 'Approve')" style="margin-right: 10px; color: rgb(67, 229, 135);"></i>
+              <i class="fa fa-times-circle icon icon-reject" 
+                 (click)="changeReservationStatus(reservation.id, 'Reject')"></i>
+            </span>
+            <span *ngIf="reservation.reservationStatus !== 'PENDING'">
+              {{ reservation.reservationStatus }} <!-- For debugging purposes -->
+            </span>
+          </td>
+          
+          
+          
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="pageNumber === 0">Previous</button>
+      <button (click)="nextPage()" [disabled]="pageNumber === reservationResponse.totalPages - 1">Next</button>
+    </div>
+  </div>
+  <h2>(Page {{ reservationResponse.pageNumber + 1 }} of {{ reservationResponse.totalPages }})</h2>
+  

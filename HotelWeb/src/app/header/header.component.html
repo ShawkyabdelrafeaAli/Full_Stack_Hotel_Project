@@ -1,0 +1,30 @@
+<nav>
+    <!-- Visible when neither admin nor customer is logged in -->
+    <div class="links" *ngIf="!isAdminLoggedIn && !isCustomerLoggedin">
+      <ul>
+        <li routerLink="/register" routerLinkActive="active"><strong>Register</strong></li>
+        <li routerLink="/" routerLinkActive="active"><strong>Login</strong></li>
+      </ul>
+    </div>
+  
+    <!-- Visible when customer is logged in -->
+    <div class="links" *ngIf="isCustomerLoggedin">
+      <ul>
+        <li routerLink="/customer/rooms" routerLinkActive="active"><strong>Rooms</strong></li>
+        <li routerLink="/bookings" routerLinkActive="active"><strong>Bookings</strong></li>
+        <li (click)="logout()" routerLinkActive="active"><strong>Logout</strong></li>
+      </ul>
+    </div>
+  
+    
+    <div class="links" *ngIf="isAdminLoggedIn">
+      <ul>
+        <li routerLink="/admin/rooms" routerLinkActive="active"><strong>Post Room</strong></li>
+        <li routerLink="/dashboard" routerLinkActive="active"><strong>Dashboard</strong></li>
+        <li routerLink="/reservations" routerLinkActive="active"><strong>Reservations</strong></li>
+        <li (click)="logout()" routerLinkActive="active"><strong>Logout</strong></li>
+      </ul>
+    </div>
+
+  </nav>
+  

@@ -1,0 +1,171 @@
+/* styles.css
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #b8b012, #ab188b);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    background: #1a0b16;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    margin-left: 37%;
+  }
+  
+  form h2 {
+    text-align: center;
+    color: #faf8f8;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e8dcdc;
+  }
+  
+  .input-group input,
+  .input-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    font-size: 16px;
+    transition: border 0.3s ease;
+  }
+  
+  .input-group input:focus,
+  .input-group select:focus {
+    border-color: #4facfe;
+    background: #fff;
+    outline: none;
+  }
+  
+  .input-group input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+  }
+  
+  .input-group label[for="terms"] {
+    display: inline-block;
+    margin-top: 8px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 15px 0;
+    background: linear-gradient(to right, #4e26b3, #d800fe);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background: linear-gradient(to right, #da2893, #fe007f);
+  }
+   */
+
+   /* Container styling */
+   div {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form title */
+  h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form label */
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Form inputs */
+  form input[type="text"],
+  form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border 0.3s;
+  }
+  
+  /* Change input border on focus */
+  form input[type="text"]:focus,
+  form input[type="number"]:focus {
+    border-color: #0ecd2e;
+    outline: none;
+  }
+  
+  /* Submit button styling */
+  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #852f0a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+  }
+  
+  /* Change button background on hover */
+  form button:hover {
+    background-color: #b3003c;
+  }
+  
+  /* Success message */
+  .success-message {
+    margin-top: 20px;
+    padding: 10px;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Error message */
+  .error-message {
+    margin-top: 20px;
+    padding: 10px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+  }
+  

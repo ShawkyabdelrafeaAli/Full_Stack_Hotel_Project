@@ -1,0 +1,67 @@
+table {
+    background: rgb(27, 35, 97);
+    color: white;
+    font-weight: bold;
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto; /* Center the table */
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+    margin-top: 20px;   /* Optional: Adds some space above the heading */
+    color: rgb(27, 35, 97); /* Optional: Match the table's color scheme */
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #444141;
+}
+
+.pagination-controls {
+    margin-top: 20px;
+    text-align: center; /* Center pagination controls as well */
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: lightgray;
+}
+
+
+/* Table cell style */
+td {
+    text-align: center; /* Center align the icons in the table cell */
+}
+
+/* Icon styles */
+.icon {
+    font-size: 24px; /* Size of the icons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.2s; /* Smooth transition for scaling */
+}
+
+/* Hover effect for the icons */
+.icon:hover {
+    transform: scale(1.2); /* Slightly increase size on hover */
+}
+
+/* Specific styles for the approval and rejection icons */
+.icon-approve {
+    color: green; /* Green color for approval icon */
+}
+
+.icon-reject {
+    color: red; /* Red color for rejection icon */
+}

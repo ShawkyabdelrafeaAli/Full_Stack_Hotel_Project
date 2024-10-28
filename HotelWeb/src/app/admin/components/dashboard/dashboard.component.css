@@ -1,0 +1,138 @@
+/* Container and general styles */
+.container {
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 1200px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 40px;
+}
+h2{
+  
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Row and column layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 0 0 30%; /* Adjust this percentage to change the width of each card */
+  margin-bottom: 20px;
+}
+
+/* Card component */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+/* Button container and styles */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+}
+
+.btn-delete {
+  background-color: red;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: darkred;
+}
+
+/* Miscellaneous */
+hr {
+  margin: 10px 0;
+  border: 0;
+  height: 1px;
+  background-color: #eee;
+}
+
+
+
+
+
+
+/* Center the pagination controls and style the buttons */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  gap: 15px; /* Space between elements */
+  font-size: 16px;
+}
+
+.pagination-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pagination-btn:hover {
+  background-color: #0056b3;
+}
+
+.pagination-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Center the span */
+.pagination-controls span {
+  font-size: 18px;
+  font-weight: 500;
+}

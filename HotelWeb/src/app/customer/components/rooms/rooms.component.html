@@ -1,0 +1,41 @@
+
+
+
+<div class="room-list">
+    <h2>Room List</h2>
+    <div *ngFor="let room of rooms; let i = index" class="room-card">
+      <h3>{{ room.name }}</h3>
+      <p><strong>Type:</strong> {{ room.type }}</p>
+      <p><strong>Price:</strong> {{ room.price | currency }}</p>
+      <div class="button-container">
+        <button class="edit-button" (click)="showModalMiddle(room.id)">Book</button>
+      </div>
+    </div>
+  </div>
+  
+  
+   <!-- Pagination Controls -->
+   <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="pageNumber === 1">Previous</button>
+    <span>Page {{ pageNumber }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="pageNumber === totalPages">Next</button>
+  </div> 
+
+
+ <div *ngIf="isvisiblemiddle" class="custom-modal">
+    <div class="modal-content">
+      <h3>Book Room</h3>
+      <label for="checkIn">Check-in Date:</label>
+      <input type="date" id="checkIn" (change)="onChange($event)" />
+      
+      <label for="checkOut">Check-out Date:</label>
+      <input type="date" id="checkOut" (change)="onChange($event)" />
+      
+      <div class="modal-footer">
+        <button (click)="hanldeOkMiddle()" [disabled]="!isFormValid()">OK</button>
+        <button (click)="handleCancleMiddle()">Cancel</button>
+      </div>
+    </div>
+    <div class="modal-backdrop" (click)="handleCancleMiddle()"></div>
+  </div>
+    

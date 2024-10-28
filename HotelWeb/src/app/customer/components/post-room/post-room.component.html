@@ -1,0 +1,17 @@
+
+<h1>Add New Room </h1>
+<form [formGroup]="roomForm" (ngSubmit)="onSubmit()">
+  <label for="name">Room Name:</label>
+  <input id="name" formControlName="name" required />
+
+  <label for="type">Room Type:</label>
+  <input id="type" formControlName="type" required />
+
+  <label for="price">Price:</label>
+  <input id="price" formControlName="price" type="number" required />
+
+  <label for="file">Upload Photo:</label>
+  <input id="file" type="file" (change)="onFileChange($event)" required />
+
+  <button type="submit" [disabled]="roomForm.invalid">Add Room</button>
+</form>
